@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 63.9%;
+    
+    --accent: 0 0% 13%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-black text-white;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.98), rgba(0, 0, 0, 0.98)),
+                      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><rect width="100%" height="100%" fill="none"/><circle cx="3" cy="3" r="0.5" fill="%23FFFFFF" opacity="0.15"/><circle cx="13" cy="13" r="0.5" fill="%23FFFFFF" opacity="0.15"/></svg>');
+    background-size: cover, 20px 20px;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bebas-neue tracking-wider;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-800 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-700;
+  }
+}
+
+@layer components {
+  .furia-btn {
+    @apply bg-gradient-to-r from-gray-900 to-gray-800 px-6 py-2 rounded font-bold text-white hover:from-gray-800 hover:to-gray-700 transition-all duration-300 shadow-lg;
+  }
+
+  .furia-card {
+    @apply bg-gray-900/80 rounded-lg p-6 border border-gray-800 shadow-lg backdrop-blur-sm;
+  }
+
+  .glow-effect {
+    @apply relative;
+  }
+
+  .glow-effect::after {
+    @apply content-[''] absolute top-0 left-0 w-full h-full rounded-lg opacity-0 transition-opacity duration-300;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-effect:hover::after {
+    @apply opacity-100;
+  }
+}
+
+.neon-text {
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.glass-panel {
+  background: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
