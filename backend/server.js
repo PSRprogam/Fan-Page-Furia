@@ -1,3 +1,15 @@
+/**
+ * Este arquivo define um servidor backend em Node.js utilizando o framework Express.js.
+ * Ele fornece uma API no endpoint /api/furia-players que busca e retorna informações
+ * dos jogadores do time de Counter-Strike FURIA através da biblioteca 'hltv'.
+ *
+ * Tecnologias Utilizadas:
+ * - Node.js: Ambiente de execução JavaScript do lado do servidor.
+ * - Express.js: Framework web minimalista para Node.js.
+ * - cors: Middleware para habilitar Cross-Origin Resource Sharing (CORS).
+ * - hltv: Biblioteca para interagir com os dados do site HLTV.org.
+ */
+
 const express = require('express');
 const cors = require('cors'); // Adicionando CORS
 const { HLTV } = require('hltv');
@@ -23,7 +35,15 @@ let players = [
 ];
 
 
-// Função para filtrar e formatar os dados do jogador, conforme seu formato
+/**
+ * Função responsável por extrair e formatar os dados relevantes de um objeto de jogador
+ * retornado pela biblioteca 'hltv' para um formato mais adequado para a aplicação.
+ *
+ * @param {object} player - O objeto contendo os dados brutos do jogador obtido da 'hltv'.
+ * @returns {object} Um novo objeto com os dados do jogador formatados, incluindo um 'id' único,
+ * nome no jogo ('name'), nome completo ('fullName'), URL da imagem ('image'),
+ * país ('country') e estatísticas relevantes ('stats').
+ */
 function filtrarDadosDoJogador(player) {
     let id = contadorID; // meu id próprio
     contadorID++; // incrementa
@@ -42,7 +62,32 @@ function filtrarDadosDoJogador(player) {
   };
 }
 
-// Rota para pegar os jogadores do time FURIA
+/**
+ * Rota GET /api/furia-players
+ *
+ * Busca e retorna as informações dos jogadores ativos do time FURIA de Counter-Strike
+ * utilizando a biblioteca 'hltv'.
+ *
+ * - Se os dados dos jogadores já foram carregados (o array 'players' tem mais de um elemento,
+ * indicando que a busca já ocorreu), a rota retorna os dados existentes em cache,
+ * incluindo o técnico 'sidde' que foi adicionado inicialmente.
+ *
+ * - Caso contrário, a rota realiza as seguintes operações:
+ * 1. Utiliza 'HLTV.getTeamByName' para obter informações básicas sobre o time FURIA.
+ * 2. Itera sobre a lista de jogadores retornada.
+ * 3. Para cada jogador ativo (não 'Benched'), utiliza 'HLTV.getPlayerByName' para buscar
+ * informações detalhadas.
+ * 4. A função 'filtrarDadosDoJogador' é chamada para formatar os dados relevantes.
+ * 5. Os jogadores formatados são adicionados ao array 'players', evitando a adição duplicada
+ * do técnico 'sidde' e de outros jogadores que possam aparecer repetidamente na API.
+ * 6. Finalmente, o array 'players' é ordenado pelo 'id' e enviado como uma resposta JSON.
+ *
+ * @async
+ * @param {object} req - Objeto de requisição do Express.
+ * @param {object} res - Objeto de resposta do Express.
+ * @returns {void} - Envia um JSON com um array de objetos de jogador ou um erro 500.
+ */
+
 app.get('/api/furia-players', async (req, res) => {
   try {
     // Se os dados dos jogadores já foram carregados, só retorna os dados existentes
@@ -77,7 +122,8 @@ app.get('/api/furia-players', async (req, res) => {
   }
 });
 
-// Inicia o servidor
+// Inicia o servidor Express na porta especificada (neste caso, 3001).
+// Uma mensagem é exibida no console indicando que o servidor está rodando.
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
 });

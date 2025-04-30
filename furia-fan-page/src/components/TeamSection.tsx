@@ -1,3 +1,32 @@
+/**
+ * Componente React TeamSection: Exibe a seção "O ELENCO DA FURIA" com informações
+ * sobre os jogadores do time de Counter-Strike. Os dados dos jogadores são
+ * obtidos através de uma chamada para a API backend.
+ *
+ * Funcionalidades:
+ * - Carrega dinamicamente os dados dos jogadores da API backend ao montar o componente.
+ * - Exibe um indicador de "Carregando..." enquanto os dados estão sendo buscados.
+ * - Renderiza as informações de cada jogador em um card individual, incluindo:
+ * - Imagem do jogador (com fallback em caso de erro no carregamento).
+ * - Nome e nome completo.
+ * - Função (Role) no time.
+ * - Estatísticas relevantes (Rating 2.0, K/D Ratio, Headshot %, Maps Played) para jogadores.
+ * - Tempo com a equipe para o Coach.
+ * - Utiliza a biblioteca 'framer-motion' para adicionar animações de entrada suaves aos cards dos jogadores.
+ * - Layout responsivo para exibir os jogadores em grid de até 3 colunas em telas maiores.
+ *
+ * Dependências (Instalação via npm ou yarn):
+ * - react: Biblioteca principal do React.
+ * - framer-motion: Biblioteca para animações de movimento.
+ * Como Usar:
+ * 1. Certifique-se de que o servidor backend (definido em `server.js` ou similar) esteja rodando e acessível na URL `http://localhost:3001/api/furia-players`.
+ * 2. Instale as dependências do frontend:
+ * ```bash
+ * npm install react framer-motion
+ * # ou 
+ * yarn add react framer-motion
+ */
+
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 

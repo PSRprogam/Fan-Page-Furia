@@ -1,3 +1,41 @@
+/**
+ * Componente React PanteraBot: Implementa um chatbot interativo usando a API Gemini.
+ * Permite que usuários façam perguntas sobre a FURIA (CS2) e recebam respostas contextuais.
+ *
+ * Funcionalidades:
+ * - Janela de chat estilizada para exibir mensagens do usuário e do bot.
+ * - Botão para abrir/fechar o chat com animação.
+ * - Input para o usuário digitar e enviar mensagens.
+ * - Exibição de mensagens em balões separados com timestamps.
+ * - Integração com a API Gemini para obter respostas inteligentes.
+ * - Histórico de chat básico para contexto das respostas do bot.
+ * - Rolagem automática para a mensagem mais recente.
+ * - Tratamento de erros em chamadas à API.
+ *
+ * Dependências (Instalação via npm ou yarn):
+ * - react: Biblioteca principal do React.
+ * - react-dom: Para manipulação do DOM no React.
+ * - lucide-react: Biblioteca de ícones (MessageCircle, Send, X).
+ * - @google/generative-ai: SDK para interagir com a API Gemini.
+ * - ../lib/utils/cn (ou sua função de utilidade para classes condicionais): Para aplicar estilos CSS dinamicamente.
+ *
+ * Configuração da API Gemini:
+ * 1. Obtenha uma chave de API no Google AI Studio (ai.google.dev).
+ * 2. Crie um arquivo '.env.local' na raiz do seu projeto React.
+ * 3. Adicione sua chave de API como uma variável de ambiente:
+ * `VITE_GEMINI_API_KEY=SUA_CHAVE_DE_API_AQUI`
+ * (Certifique-se de que sua configuração do Vite carrega variáveis de ambiente).
+ *
+ * Como Usar:
+ * 1. Importe o componente:
+ * `import PanteraBot from './components/PanteraBot';`
+ * 2. Renderize o componente em sua aplicação:
+ * `<PanteraBot />`
+ * 3. O chatbot aparecerá como um botão no canto inferior direito.
+ * 4. Clique para abrir e interaja digitando suas perguntas.
+ *
+ */
+
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, Send, X } from 'lucide-react';
 import { cn } from '../lib/utils';
