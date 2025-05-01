@@ -2,13 +2,14 @@
 
 Este é um projeto React construído com TypeScript para criar uma fan page dedicada ao time de eSports Fúria. A página exibe informações sobre o time, jogadores e também inclui um chatbot interativo para os fãs.
 
+
 ## Frontend (Aplicação React com TypeScript)
 
 Esta é a interface do usuário (frontend) da Fan Page da Fúria, construída utilizando a biblioteca React e a linguagem TypeScript. Ela oferece uma experiência interativa para os fãs, exibindo informações sobre o time e integrando um chatbot.
 
 ### Tecnologias Utilizadas
 
-* [React](https://react.dev/): Biblioteca JavaScript para construir interfaces de usuário.
+* [React](https://react.dev/): Framework  JavaScript para construir interfaces de usuário.
 * [TypeScript](https://www.typescriptlang.org/): Superset de JavaScript que adiciona tipagem estática.
 * [Lucide](https://lucide.dev/): Biblioteca de ícones vetoriais para uma interface visual atraente.
 * [React Router DOM](https://reactrouter.com/web/guides/quick-start): Para gerenciamento de rotas e navegação dentro da aplicação.
@@ -20,32 +21,16 @@ Este backend em Node.js utiliza o framework Express.js para fornecer dados sobre
 ### Tecnologias Utilizadas
 
 * [Node.js](https://nodejs.org/)
-* [Express.js](https://expressjs.com/)
 * [cors](https://github.com/expressjs/cors): Middleware para habilitar CORS.
 * [hltv](https://www.npmjs.com/package/hltv): Biblioteca para interagir com os dados do site HLTV.org.
+
+## Pré-requisitos
+
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina. Recomendamos a versão LTS. Além disso, você precisará do [npm](https://www.npmjs.com/) (instalado com o Node.js) ou do [yarn](https://yarnpkg.com/).
 
 ### Endpoints da API
 
 * `GET /api/furia-players`: Retorna um array de objetos JSON contendo informações dos jogadores ativos do time FURIA. Cada objeto inclui um `id` único, `name` (nome no jogo), `fullName`, `image` (URL da imagem), `country` e um objeto `stats` com `rating`, `kd`, `hs` e `maps`. O técnico 'sidde' também está incluído nesta lista.
-
-### Como Rodar o Backend
-
-1.  Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
-2.  Navegue até o diretório do seu backend no terminal.
-3.  Instale as dependências:
-    ```bash
-    npm install
-    ```
-4.  Inicie o servidor:
-    ```bash
-    npm start
-    ```
-    O servidor estará rodando em `http://localhost:3001`.
-
-Este nível de documentação no seu código e no `README` tornará seu backend muito mais compreensível para você e para qualquer outro desenvolvedor que precise trabalhar nele no futuro. 😊
-## Pré-requisitos
-
-Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina. Recomendamos a versão LTS. Além disso, você precisará do [npm](https://www.npmjs.com/) (instalado com o Node.js) ou do [yarn](https://yarnpkg.com/).
 
 ## Instalação
 
@@ -60,16 +45,36 @@ Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
     # ou
     yarn install
     ```
+    
+### Como Rodar o Frontend
 
-## Como Rodar o Projeto
-
-1.  Execute o comando para iniciar a aplicação:
+1.  Navegue até a pasta furia-fan-oage no terminal.
+2.  ```bash    
+    cd furia-fan-page
+    ```
+3.  Instale as dependências:
+    ```bash
+    npm install
+    ```
+4.  Inicie o servidor:
     ```bash
     npm run dev
-    # ou
-    yarn run dev
     ```
-2.  Acesse a aplicação no seu navegador em `http://localhost:3000`.
+    O servidor estará rodando em `http://localhost:8080`.
+
+### Como Rodar o Backend
+
+1.  Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
+2.  Navegue até o diretório do seu backend no terminal.
+3.  Instale as dependências:
+    ```bash
+    npm install
+    ```
+4.  Inicie o servidor:
+    ```bash
+    npm start
+    ```
+    O servidor estará rodando em `http://localhost:3001`.
 
 ## Chatbot Integrado (PanteraBot)
 
