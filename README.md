@@ -11,6 +11,7 @@ Esta é a interface do usuário (frontend) da Fan Page da Fúria, construída ut
 
 * [React](https://react.dev/): Framework  JavaScript para construir interfaces de usuário.
 * [TypeScript](https://www.typescriptlang.org/): Superset de JavaScript que adiciona tipagem estática.
+* [Vite](https://vite.dev/): Ferramenta de build para desenvolvimento rápido em React.
 * [Lucide](https://lucide.dev/): Biblioteca de ícones vetoriais para uma interface visual atraente.
 * [React Router DOM](https://reactrouter.com/web/guides/quick-start): Para gerenciamento de rotas e navegação dentro da aplicação.
 
@@ -45,7 +46,7 @@ Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
     # ou
     yarn install
     ```
-    
+
 ### Como Rodar o Frontend
 
 1.  Navegue até a pasta furia-fan-oage no terminal.

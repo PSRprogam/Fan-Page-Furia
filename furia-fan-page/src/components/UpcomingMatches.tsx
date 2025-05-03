@@ -16,8 +16,8 @@ interface Match {
 const upcomingMatches: Match[] = [
   {
     id: 1,
-    opponent: "Spirit",
-    opponentLogo: "https://img-cdn.hltv.org/teamlogo/syrtYYKR7sBRw3ZHy1YFX7.png?ixlib=java-2.1.0&w=100&s=8d98ab33e1c8139633132cb9eccda0af",
+    opponent: "The MongolZ",
+    opponentLogo: "https://img-cdn.hltv.org/teamlogo/bRk2sh_tSTO6fq1GLhgcal.png?ixlib=java-2.1.0&w=100&s=1bd99148a19e1e706b543500206901d4",
     tournament: "PGL Astana 2025",
     tournamentLogo: "https://upload.wikimedia.org/wikipedia/commons/4/46/PGL_Logo.png",
     date: "10 Maio, 2025",
